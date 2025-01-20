@@ -61,9 +61,9 @@ app.use(cors())
 
 app.get("/",(req,res)=>res.send("<h1>Autok v1.0.0</h1>"))
 app.get("/autok",(req,res)=>res.send(autok))
-app.post("auto",postAutok)
-app.put("auto",modAutok)
-app.delete("auto",delAutok)
+app.post("/auto",postAutok)
+app.put("/auto",modAutok)
+app.delete("/auto",delAutok)
 
 
 app.listen(80,(error)=>{
