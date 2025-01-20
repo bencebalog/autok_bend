@@ -23,7 +23,7 @@ fs.readFile("autok.csv","utf-8",(error,data)=>{
 
 
 function postAutok(req,res) {
-    if(req.body.tips&& req.body.suly && req.body.loero){
+    if(req.body.tipus&& req.body.suly && req.body.loero){
         const auto = { id:nextid++, tipus:req.body.tipus, suly:req.body.suly*1, loero:req.body.loero*1}
         auto.push(auto)
         res.send(auto)
