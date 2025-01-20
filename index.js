@@ -1,7 +1,7 @@
 import express from "express"
 import cors from "cors"
 import fs from "fs"
-import { nextTick } from "process";
+
 
 
 
@@ -25,7 +25,7 @@ fs.readFile("autok.csv","utf-8",(error,data)=>{
 function postAutok(req,res) {
     if(req.body.tipus&& req.body.suly && req.body.loero){
         const auto = { id:nextid++, tipus:req.body.tipus, suly:req.body.suly*1, loero:req.body.loero*1}
-        auto.push(auto)
+        autok.push(auto)
         res.send(auto)
     }else res.send({error:"Hiányzó paraméterek!!"})
 }
@@ -34,7 +34,7 @@ function modAutok(req,res) {
         let i = indexOf(req.body.id*1);
         if(i!=-1){
             const auto = { id:req.body.id*1, tipus:req.body.tipus, suly:req.body.suly*1, loero:req.body.loero*1}
-            auto.push(auto)
+            autok.push(auto)
             res.send(auto)
         }else res.send({error:"Hibás azonosító!!"})
     }else res.send({error:"Hiányzó paraméterek!!"})
